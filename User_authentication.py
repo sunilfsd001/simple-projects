@@ -16,5 +16,6 @@ def auth():
             print("Failed to login")
             break
     else:
-        print('You entered a wrong input')
+        print('Thank you !')
+
 auth()

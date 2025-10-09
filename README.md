@@ -1,2 +1,2 @@
 # simple-projects
-Simple and basic projects based on python programming language
+A simple and basic projects i have did based on python programming language

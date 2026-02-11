@@ -14,7 +14,7 @@ def candies(quantity):  #function
                 print(f"Now available candies quantity is {available_candies}") # Printing available candies after dropping
                 break
             else:
-                print("Sorry! we dont have that much of candies pls try with different quantity")
+                print("Sorry! we dont have that much of candies pls try with quantity")
         else:
             print("Please pay the amount for candies")  
 

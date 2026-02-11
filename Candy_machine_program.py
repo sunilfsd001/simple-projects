@@ -16,7 +16,7 @@ def candies(quantity):  #function
             else:
                 print("Sorry! we dont have that much of candies pls try with different quantity")
         else:
-            print("Please pay the amount for candies")
+            print("Please pay the amount for candies")  
 
 # Main code
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="name" href="{{ url_for('dashboard') }}">DASHBOARD</a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <table class="user-details" cellspacing="10">
+        <tr>
+            <td>USER ID :</td>
+            <td>{{ user[0] }}</td>
+        </tr>
+        <tr>
+            <td>NAME :</td>
+            <td>{{ user[2]+' '+user[3] }}</td>
+        </tr>
+    </table>
+
+    <div class="container" style="margin-top: 100px;">
+        <h1>Welcome to your dashboard!</h1>
+        <p style="margin:20px 10px;">Here you can manage your account and view your details.</p>
+    </div>
+
+    <div class="box-option">
+        <div class="options">
+            <ul>
+                <li><button class="btn-select" onclick="showSection('updateprofile')">Update Profile</button></li>
+                <li><button class="btn-select" onclick="showSection('changepassword')">Change Password</button></li>
+                <li><button class="btn-select" onclick="showSection('viewbalance')">View Balance</button></li>
+                <li><button class="btn-select" onclick="showSection('transferfunds')">Transfer Funds</button></li>
+                <li><button class="btn-select" onclick="showSection('depositfunds')">Deposit Funds</button></li>
+                <li><button class="btn-select" onclick="showSection('withdrawfunds')">Withdraw Funds</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="box-cont">
+
+        <div class="updateprofile" id="updateprofile">
+            <form action="{{ url_for('update_profile') }}" method="post">
+                <p class="box-head">UPDATE PROFILE</p>
+                <table cellspacing="20" cellpadding="10">
+                    <tr>
+                        <td>First Name :</td>
+                        <td><input type="text" name="firstname" value="{{ user[2] }}" required></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name :</td>
+                        <td><input type="text" name="lastname" value="{{ user[3] }}" required></td>
+                    </tr>
+                    <tr>
+                        <td>Address :</td>
+                        <td><input type="text" name="address" value="{{ user[4] }}" required></td>
+                    </tr>
+                    <tr>
+                        <td>Phone :</td>
+                        <td><input type="tel" name="phone" value="{{ user[5] }}" required></td>
+                    </tr>
+                    <tr>
+                        <td>Email :</td>
+                        <td><input type="email" name="email" value="{{ user[6] }}" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="btn-form" type="submit" value="Update Profile"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="changepassword" id="changepassword">
+            <form action="{{ url_for('change_password') }}" method="post">
+                <p class="box-head">CHANGE PASSWORD</p>
+                <table cellspacing="20" cellpadding="10">
+                    <tr>
+                        <td>Current Password :</td>
+                        <td><input type="password" name="current_password" required></td>
+                    </tr>
+                    <tr>
+                        <td>New Password :</td>
+                        <td><input type="password" name="new_password" required></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password :</td>
+                        <td><input type="password" name="confirm_password" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="btn-form" type="submit" value="Change Password"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+
+        <div class="viewbalance" id="viewbalance">
+            <p class="box-head">CURRENT BALANCE</p>
+            <h2>₹<span id="current_balance">{{ balance[0] if balance else 0 }}</span></h2>
+        </div>
+
+        <div class="transferfunds" id="transferfunds">
+            <p class="box-head">TRANSFER FUNDS</p>
+            <input type="text" id="transfer_receiver" placeholder="Receiver UserID" required>
+            <input type="number" id="transfer_amount" placeholder="Amount" required>
+            <button class="btn-form" onclick="transferFunds()" type="button">Transfer</button>
+        </div>
+
+        <div class="depositfunds" id="depositfunds">
+            <p class="box-head">DEPOSIT FUNDS</p>
+            <input type="number" id="deposit_amount" placeholder="Amount" required>
+            <button class="btn-form" onclick="depositFunds()" type="button">Deposit</button>
+        </div>
+
+        <div class="withdrawfunds" id="withdrawfunds">
+            <p class="box-head">WITHDRAW FUNDS</p>
+            <input type="number" id="withdraw_amount" placeholder="Amount" required>
+            <button class="btn-form" onclick="withdrawFunds()" type="button">Withdraw</button>
+        </div>  
+
+    </div>
+
+    <footer class="footer">
+        <p>Made with ❤️ by Sunil Kumar T</p>
+        <br>
+        <p>&copy; 2025 Simple Bank. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="name" href="{{ url_for('dashboard') }}">Simple Bank</a>
+        <ul class="nav-links">
+            <li><a href="{{url_for('dashboard')}}">Dashboard</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="head">Your Profile</h1>
+        <table class="account_details" cellspacing="20"  cellpadding="10">
+            <tr>
+                <td>Name :</td>
+                <td>{{  user[2]+' '+user[3] }}</td>
+            </tr>
+            <tr>
+                <td>User id :</td>
+                <td>{{ user[0] }}</td>
+            </tr>
+            <tr>
+                <td>Address :</td>
+                <td>{{ user[4] }}</td>
+            </tr>
+            <tr>
+                <td>Phone number :</td>
+                <td>+91 {{ user[5] }}</td>
+            </tr>
+             <tr>
+                <td>Email id :</td>
+                <td>{{ user[6] }}</td>
+            </tr>
+        </table>
+    </div>
+    <footer class="footer">
+    <p>Made with ❤️ by Sunil Kumar T</p>
+    <br>
+    <p>&copy; 2025 Simple Bank. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %} Sign Up {% endblock %}
+{% block content %}
+    <h1 class="head">Sign Up</h1>
+   <div  class="container">
+    <form action="{{ url_for('signup') }}" method="post">
+      <table cellpadding="10" cellspacing="10">
+       <tr>
+           <td><label for="userid">User Id :</label></td>
+           <td><input type="text" id="userid" name="userid" required></td>
+       </tr>
+       <tr>
+           <td><label for="password">Password:</label></td>
+           <td><input type="password" id="password" name="password" required></td>
+       </tr>
+       <tr>
+           <td><label for="firstname">First Name:</label></td>
+           <td><input type="text" id="firstname" name="firstname" required></td>
+       </tr>
+       <tr>
+           <td><label for="lastname">Last Name:</label></td>
+           <td><input type="text" id="lastname" name="lastname" required></td>
+       </tr>
+       <tr>
+           <td><label for="address">Address:</label></td>
+           <td><input type="text" id="address" name="address" required></td>
+       </tr>
+       <tr>
+           <td><label for="phone">Phone:</label></td>
+           <td><input type="tel" id="phone" name="phone" required></td>
+       </tr>
+       <tr>
+           <td><label for="email">Email:</label></td>
+           <td><input type="email" id="email" name="email" required></td>
+       </tr>
+       <tr>
+           <td><label for="text">Deposite Amount :</label></td>
+           <td><input type="text" id="depamount" name="depamount" required></td>
+       </tr>
+       <tr>
+           <td colspan="2"><input  class="btn-form" type="submit" value="Sign Up"></td>
+       </tr>
+       </table>
+   </form>
+   </div>
+{% endblock %}

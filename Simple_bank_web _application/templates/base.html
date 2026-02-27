@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{% block title %} Default {% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="name" href="{{ url_for('home') }}"><img class="logo" src="/static/images/logo.jpg" alt="logo"></a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+        </ul>
+    </nav>
+   {% block content %}{% endblock %}
+   <footer class="footer">
+    <p>Made with ❤️ by Sunil Kumar T</p>
+    <br>
+    <p>&copy; 2025 Simple Bank. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

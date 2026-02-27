@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+<h1 class="head home-head">This web application is a simple bank management system.</h1>
+<p class="description">Users can sign up, log in, and manage their bank accounts.</p>
+<a class='btn btn-login' style="margin-bottom: 150px;"   href='{{ url_for("login") }}'>Click Here to login</a>
+{% endblock %}

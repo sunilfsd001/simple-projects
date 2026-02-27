@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #010409;
+    color: #fff;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.navbar .name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar .nav-links li a {
+    font-weight: 400;
+    transition: all 0.2s linear;
+}
+
+.navbar .nav-links li a:hover {
+    color: #555;
+}
+
+.navbar .logo{
+    margin:-20px;
+    height:80px;
+}
+.head {
+    margin-top: 100px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.home-head {
+    margin: 15% 100px 20px 100px;
+    font-size: 40px;
+}
+
+.description {
+    margin: 50px 30px;
+}
+
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    margin:100px 20px 50px 20px;
+    padding: 30px 60px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+}
+
+.box-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.user-details {
+    position: fixed;
+    top: 65px;
+    right: 0;
+    padding: 15px 20px;
+    backdrop-filter: blur(15px);
+    text-align: right;
+    background: rgba(0,0,0,0.05);
+    border-radius: 0 10px 10px 0;
+}
+
+table {
+    text-align: left;
+    margin: auto;
+}
+
+.account_details {
+    text-align: left;
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.options {
+    margin-top: 30px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.options ul {
+    padding: 0;
+}
+
+.options ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+.btn-select {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #555;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-select:hover {
+    transform: scale(1.1);
+    color: #010409;
+    background-color: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"] {
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #555;
+    outline: none;
+    width: 300px;
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    border-color: #888;
+}
+
+.btn-form {
+    padding: 10px 25px;
+    margin-top: 15px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #fff;
+    color: #010409;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-form:hover {
+    background-color: #010409;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.box-cont > div {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: 30px;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 350px;
+}
+
+.box-cont > div.show {
+    display: block;
+    opacity: 1;
+}
+
+#current_balance {
+    font-size: 28px;
+    font-weight: 700;
+    color: #00ffb3;
+    margin-top: 15px;
+}
+
+footer {
+    position: relative;
+    margin-top: 50px;
+    bottom:0;
+    padding: 20px;
+    background-color: #111;
+    color: #888;
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px 30px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    .box-cont > div {
+        width: 90%;
+    }
+}

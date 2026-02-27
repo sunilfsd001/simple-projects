@@ -10,7 +10,7 @@ while game.lower()=='y': # Enter while y is a input
     num=r.randint(1,100) # 2 digit random numbers
   elif level==2:
     num=r.randint(100,1000) # 3 digit random numbers
-  elif level==2:
+  elif level==3:
     num=r.randint(1000,10000) # 4 digit random numbers
   else:
     print("Enter the valid input") 
@@ -26,4 +26,5 @@ while game.lower()=='y': # Enter while y is a input
       else:
         print("Larger")   
 else:
+
      print("Thank you for your intrest..")
